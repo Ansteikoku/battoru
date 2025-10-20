@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>低遅延 P2P Arena</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div id="lobby">
+    <h1>🏠 ロビー</h1>
+    <div>
+      <input id="roomName" placeholder="部屋名">
+      <button id="createBtn">作成</button>
+    </div>
+    <h3>公開ルーム</h3>
+    <div id="roomList"></div>
+  </div>
+
+  <div id="chat" style="display:none;">
+    <h2 id="roomTitle"></h2>
+    <div id="messages" style="height:220px; overflow:auto; border:1px solid #333; margin:8px; padding:8px;"></div>
+    <input id="chatInput" placeholder="メッセージ">
+    <button id="sendBtn">送信</button>
+    <div style="margin-top:8px;">
+      <button id="selectCharBtn">キャラ選択</button>
+      <button id="startGameBtn">ゲーム開始</button>
+    </div>
+  </div>
+
+  <div id="charSelect" style="display:none;">
+    <h2>キャラ選択</h2>
+    <div id="charOptions">
+      <div class="char-card" data-char="warrior">⚔️ 戦士</div>
+      <div class="char-card" data-char="mage">🪄 魔法使い</div>
+      <div class="char-card" data-char="archer">🏹 弓使い</div>
+      <div class="char-card" data-char="ninja">🥷 忍者</div>
+    </div>
+    <div><button id="charConfirmBtn">決定</button><button id="cancelCharBtn">戻る</button></div>
+  </div>
+
+  <canvas id="gameCanvas" width="800" height="600" style="display:none;border:1px solid #555;margin-top:10px;"></canvas>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
